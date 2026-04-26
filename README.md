@@ -69,7 +69,7 @@ This project allows users to register, login, browse events, and book tickets.
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/event-booking-api.git
+git clone https://github.com/youssefmarey/event-booking-api.git
 cd event-booking-api
 composer install
 cp .env.example .env
