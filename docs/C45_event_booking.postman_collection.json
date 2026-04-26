@@ -1,0 +1,946 @@
+{
+  "info": {
+    "_postman_id": "e762e671-478f-4c47-abd8-2e6de1a7be76",
+    "name": "C45_event_booking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46890560"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Marey",
+                  "type": "text",
+                  "uuid": "53e644fc-2c46-4076-85dd-c4c62ce1f0d4"
+                },
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "88dc317d-0bca-4fc1-888c-e3baa2021d97"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "415eb1b2-8a82-4f55-aadd-6df061be1315"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "0307ab93-9d72-4a30-94d2-984148f14a67"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "0307ab93-9d72-4a30-94d2-984148f14a67"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "profile"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "0307ab93-9d72-4a30-94d2-984148f14a67"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Category",
+      "item": [
+        {
+          "name": "Get Categories",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "0307ab93-9d72-4a30-94d2-984148f14a67"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/categories",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Category",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "marey@gmail.com",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13",
+                  "disabled": true
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "type": "text",
+                  "uuid": "0307ab93-9d72-4a30-94d2-984148f14a67",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/categories/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store Category",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "test",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/categories",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Updated ",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/categories/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Updated ",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/categories/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "categories",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Event",
+      "item": [
+        {
+          "name": "Get Events",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "XXydPryPRKzGCbIEOBUxkhxTLwVlTFdSbcabKunqcc5f0a92",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "test",
+                  "type": "text",
+                  "uuid": "f825ebfd-6025-402a-9302-45aeee4c4a13"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Event",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/events/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Event",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/events/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Store Event",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "category_id",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a2d9d622-a22e-4687-adb3-493b026e8ac4"
+                },
+                {
+                  "key": "title",
+                  "value": "marey",
+                  "type": "text",
+                  "uuid": "dab89543-c73e-475e-a161-baa69daef51e"
+                },
+                {
+                  "key": "description",
+                  "value": "test test",
+                  "type": "text",
+                  "uuid": "f8f3ed78-73c0-4277-9e03-94960b3f3485"
+                },
+                {
+                  "key": "start_time",
+                  "value": "2027-01-30 11:23:11",
+                  "type": "text",
+                  "uuid": "d9414463-d92f-4f45-a32c-e4939161b286"
+                },
+                {
+                  "key": "end_time",
+                  "value": "2027-02-01 11:23:11",
+                  "type": "text",
+                  "uuid": "61036d49-f667-42bc-80b5-5ddfa1f5924d"
+                },
+                {
+                  "key": "location",
+                  "value": "Alex",
+                  "type": "text",
+                  "uuid": "be8c79f5-8ebf-468e-a193-9f32e93a31b4"
+                },
+                {
+                  "key": "price",
+                  "value": "4500.91",
+                  "type": "text",
+                  "uuid": "d96065cf-d1a6-4320-9062-dc506ca6ff0a"
+                },
+                {
+                  "key": "available_seats\n",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "f4253157-f39f-40af-8471-2c78a6176476"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "a8b2edd8-2d1f-4792-8631-d15a5ff1cad1",
+                  "src": "/C:/Users/youss/Downloads/14-blue-1662901616.jpg"
+                },
+                {
+                  "key": "is_active",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "b39736b4-f20c-4af7-8804-639fd72343cd"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/events",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Event",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "category_id",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "a2d9d622-a22e-4687-adb3-493b026e8ac4"
+                },
+                {
+                  "key": "title",
+                  "value": "marey",
+                  "type": "text",
+                  "uuid": "dab89543-c73e-475e-a161-baa69daef51e"
+                },
+                {
+                  "key": "description",
+                  "value": "test test test",
+                  "type": "text",
+                  "uuid": "f8f3ed78-73c0-4277-9e03-94960b3f3485"
+                },
+                {
+                  "key": "start_time",
+                  "value": "2027-01-30 11:23:11",
+                  "type": "text",
+                  "uuid": "d9414463-d92f-4f45-a32c-e4939161b286"
+                },
+                {
+                  "key": "end_time",
+                  "value": "2027-02-01 11:23:11",
+                  "type": "text",
+                  "uuid": "61036d49-f667-42bc-80b5-5ddfa1f5924d"
+                },
+                {
+                  "key": "location",
+                  "value": "Alex",
+                  "type": "text",
+                  "uuid": "be8c79f5-8ebf-468e-a193-9f32e93a31b4"
+                },
+                {
+                  "key": "price",
+                  "value": "4500.91",
+                  "type": "text",
+                  "uuid": "d96065cf-d1a6-4320-9062-dc506ca6ff0a"
+                },
+                {
+                  "key": "available_seats\n",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "f4253157-f39f-40af-8471-2c78a6176476"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "a8b2edd8-2d1f-4792-8631-d15a5ff1cad1",
+                  "src": "/C:/Users/youss/Downloads/14-blue-1662901616.jpg"
+                },
+                {
+                  "key": "is_active",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "b39736b4-f20c-4af7-8804-639fd72343cd"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/events/21",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                "21"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "item": [
+        {
+          "name": "Store Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Io6bPFSqwpkofYNPWQD8CfcXhmTXwfXRco0s3LxVf98b87c4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "event_id",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "b5350867-a697-49c2-a2b3-a017f95d8d21"
+                },
+                {
+                  "key": "quantity",
+                  "value": "5",
+                  "type": "text",
+                  "uuid": "95b245da-2414-42c7-a554-a63373334787"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/bookings",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get bookings",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "W5RYRI6OVhdu6Z84DsmMppT2sPDiMPxab4XRIUf3d7bf9db2",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/bookings",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show booking",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Io6bPFSqwpkofYNPWQD8CfcXhmTXwfXRco0s3LxVf98b87c4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "event_id",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "b5350867-a697-49c2-a2b3-a017f95d8d21"
+                },
+                {
+                  "key": "quantity",
+                  "value": "5",
+                  "type": "text",
+                  "uuid": "95b245da-2414-42c7-a554-a63373334787"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/bookings/51",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings",
+                "51"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Io6bPFSqwpkofYNPWQD8CfcXhmTXwfXRco0s3LxVf98b87c4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "event_id",
+                  "value": "7",
+                  "type": "text",
+                  "uuid": "b5350867-a697-49c2-a2b3-a017f95d8d21"
+                },
+                {
+                  "key": "quantity",
+                  "value": "5",
+                  "type": "text",
+                  "uuid": "95b245da-2414-42c7-a554-a63373334787"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/bookings/51?quantity=5",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings",
+                "51"
+              ],
+              "query": [
+                {
+                  "key": "quantity",
+                  "value": "5",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Booking",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "W5RYRI6OVhdu6Z84DsmMppT2sPDiMPxab4XRIUf3d7bf9db2",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/bookings/52",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bookings",
+                "52"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

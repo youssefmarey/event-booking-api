@@ -2,7 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\EventController;
+use App\Http\Controllers\Api\BookingController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -15,3 +18,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/profile', [AuthController::class, 'profile']);
 });
+
+Route::middleware('auth:sanctum', 'isAdmin')->group(function () {
+    Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('events', EventController::class);
+});
+
+Route::apiResource('bookings', BookingController::class)->middleware('auth:sanctum');
